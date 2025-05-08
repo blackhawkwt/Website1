@@ -17,15 +17,15 @@
       background-repeat: no-repeat;
       background-attachment: fixed;
       color: rgb(155, 16, 224); /* Set text color */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
 
-    a {
-      color: rgb(155, 16, 224); /* Ensure links match the text color */
-      text-decoration: none; /* Optional: Remove underline from links */
-    }
-
-    a:hover {
-      text-decoration: underline; /* Optional: Add underline on hover */
+    .container {
+      text-align: center;
     }
 
     .profile-pic {
@@ -34,6 +34,38 @@
       border-radius: 50%; /* Make the image a circle */
       object-fit: cover; /* Ensure the image fits within the circle */
       border: 3px solid rgb(155, 16, 224); /* Optional: Add a border matching the text color */
+      margin-bottom: 20px;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 20px;
+    }
+
+    .links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 120px;
+      height: 40px;
+      margin: 10px 0;
+      background-color: rgba(155, 16, 224, 0.2); /* Light bubble background */
+      color: rgb(155, 16, 224);
+      text-decoration: none;
+      border-radius: 20px; /* Rounded bubble */
+      font-size: 14px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .links a:hover {
+      background-color: rgba(155, 16, 224, 0.4); /* Darker bubble on hover */
+    }
+
+    .links a i {
+      margin-right: 8px; /* Add spacing between icon and text */
     }
   </style>
 </head>
