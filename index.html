@@ -1,80 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Set character encoding and viewport for responsive design -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Page title -->
   <title>BlackHawkWT</title>
+  
+  <!-- Link to external stylesheet -->
   <link rel="stylesheet" href="styles.css" />
-  <!-- Add Font Awesome -->
+  
+  <!-- Add Font Awesome for icons -->
   <link
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     rel="stylesheet"
   />
+  
   <style>
+    /* Set background image and overall layout for the page */
     body {
       background-image: url('https://i.imgur.com/OQlAwi1_d.png?maxwidth=520&shape=thumb&fidelity=high');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      background-size: cover; /* Ensure the background covers the entire page */
+      background-repeat: no-repeat; /* Prevent background repetition */
+      background-attachment: fixed; /* Keep background fixed during scrolling */
       color: rgb(155, 16, 224); /* Set text color */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
+      display: flex; /* Use flexbox for layout */
+      justify-content: flex-start; /* Align content to the top */
+      align-items: center; /* Center content horizontally */
+      flex-direction: column; /* Stack items vertically */
+      height: 100vh; /* Set height to full viewport */
+      margin: 0; /* Remove default margin */
+      padding-top: 20px; /* Add space at the top */
     }
 
+    /* Center content inside the container */
     .container {
       text-align: center;
     }
 
+    /* Style the profile picture */
     .profile-pic {
-      width: 150px; /* Set the width of the profile picture */
-      height: 150px; /* Set the height of the profile picture */
-      border-radius: 50%; /* Make the image a circle */
+      width: 150px; /* Set width of the profile picture */
+      height: 150px; /* Set height of the profile picture */
+      border-radius: 50%; /* Make the image circular */
       object-fit: cover; /* Ensure the image fits within the circle */
-      border: 3px solid rgb(155, 16, 224); /* Optional: Add a border matching the text color */
-      margin-bottom: 20px;
+      border: 3px solid rgb(155, 16, 224); /* Add a border matching the text color */
+      margin-bottom: 20px; /* Add space below the profile picture */
     }
 
+    /* Style the links container */
     .links {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-top: 20px;
+      display: flex; /* Use flexbox for layout */
+      flex-direction: column; /* Stack links vertically */
+      align-items: center; /* Center links horizontally */
+      margin-top: 20px; /* Add space above the links */
     }
 
+    /* Style individual links */
     .links a {
-      display: flex;
-      align-items: left;
-      justify-content: center;
-      width: 120px;
-      height: 40px;
-      margin: 10px 0;
-      background-color: #10afe033; /* Light bubble background */
-      color: rgb(155, 16, 224);
-      text-decoration: none;
-      border-radius: 20px; /* Rounded bubble */
-      font-size: 14px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
+      display: flex; /* Use flexbox for layout */
+      align-items: center; /* Center content vertically */
+      justify-content: center; /* Center content horizontally */
+      width: 120px; /* Set width of the link bubble */
+      height: 40px; /* Set height of the link bubble */
+      margin: 10px 0; /* Add space between links */
+      background-color: #10afe033; /* Set light bubble background */
+      color: rgb(155, 16, 224); /* Set link text color */
+      text-decoration: none; /* Remove underline from links */
+      border-radius: 20px; /* Make the link bubble rounded */
+      font-size: 14px; /* Set font size */
+      font-weight: bold; /* Make text bold */
+      transition: background-color 0.3s ease; /* Add smooth hover effect */
     }
 
+    /* Change background color on hover */
     .links a:hover {
       background-color: rgba(155, 16, 224, 0.4); /* Darker bubble on hover */
     }
 
+    /* Add spacing between icons and text in links */
     .links a i {
-      margin-right: 8px; /* Add spacing between icon and text */
+      margin-right: 8px;
     }
   </style>
 </head>
 <body>
+  <!-- Main container for content -->
   <div class="container">
+    <!-- Profile picture -->
     <img src="https://i.imgur.com/sDg5mCi_d.jpeg?maxwidth=520&shape=thumb&fidelity=high" alt="Profile Picture" class="profile-pic" />
+    
+    <!-- Page title -->
     <h1>blackhawkwt</h1>
+    
+    <!-- Description text -->
     <p>my links n stuff idk</p>
+    
+    <!-- Links section -->
     <div class="links">
+      <!-- Individual links with icons -->
       <a href="https://twitch.tv/blackhawkwt" target="_blank">
         <i class="fab fa-twitch"></i> Twitch
       </a>
