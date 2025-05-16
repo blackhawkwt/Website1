@@ -24,6 +24,20 @@
   />
 
   <style>
+  .version-label {
+  position: fixed;           /* Stay in the same place even when scrolling */
+  top: 10px;                 /* Distance from the top */
+  right: 20px;               /* Distance from the right */
+  color: rgb(155, 16, 224);  /* Match your theme color */
+  font-family: 'Open Dyslexic', sans-serif; /* Match font */
+  font-size: 16px;           /* Size of the version text */
+  background: rgba(255,255,255,0.05); /* Optional: subtle background */
+  padding: 4px 12px;         /* Some padding */
+  border-radius: 10px;       /* Rounded corners */
+  z-index: 1000;             /* Make sure it stays on top */
+  pointer-events: none;      /* Clicks pass through */
+}
+  
   body {
     background-image: url('https://i.imgur.com/OQlAwi1_d.png?maxwidth=520&shape=thumb&fidelity=high');
     background-size: cover;
@@ -103,6 +117,8 @@
   </style>
 </head>
 <body>
+ <!-- Version text in the top right corner -->
+<div class="version-label">Version 1.05</div>
   <!-- Main container for content -->
   <div class="container">
     <!-- Profile picture -->
