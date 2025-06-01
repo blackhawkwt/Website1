@@ -114,11 +114,35 @@
     .links a i {
       margin-right: 8px;
     }
+
+    /* Now Playing Last.fm widget */
+    .now-playing {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(255,255,255,0.07);
+      color: rgb(155, 16, 224);
+      font-family: 'Open Dyslexic', sans-serif;
+      font-size: 16px;
+      padding: 6px 16px;
+      border-radius: 10px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      pointer-events: none; /* So it doesn't block clicks */
+    }
+
+    /* Style the loading icon in the widget */
+    .now-playing i {
+      margin-right: 8px; /* Space between icon and text */
+      color: #00a2ff; /* Icon color */
+    }
   </style>
 </head>
 <body>
  <!-- Version text in the top right corner -->
-<div class="version-label">Version 1.05</div>
+<div class="version-label">Version 1.06</div>
   <!-- Main container for content -->
   <div class="container">
     <!-- Profile picture -->
@@ -155,6 +179,39 @@
         <i class="fab fa-lastfm"></i> Last.fm
       </a>
     </div>
+
+    <!-- Now Playing Last.fm widget -->
+<div class="now-playing" id="now-playing">
+  <i class="fab fa-lastfm"></i> Loading now playing...
+</div>
   </div>
+
+  <script>
+const lastfmUser = "blackhawkwt"; // Your Last.fm username
+const apiKey = "8a574b1aa54c0ede194955e8a64b6c60"; // Your Last.fm API key
+
+async function updateNowPlaying() {
+  const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${lastfmUser}&api_key=${apiKey}&format=json&limit=1`;
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    const track = data.recenttracks.track[0];
+    const nowPlayingDiv = document.getElementById("now-playing");
+    if (track && track["@attr"] && track["@attr"].nowplaying === "true") {
+      nowPlayingDiv.innerHTML = `<i class="fab fa-lastfm"></i> Now Playing: <strong>${track.artist["#text"]} - ${track.name}</strong>`;
+    } else if (track) {
+      nowPlayingDiv.innerHTML = `<i class="fab fa-lastfm"></i> Last Played: <strong>${track.artist["#text"]} - ${track.name}</strong>`;
+    } else {
+      nowPlayingDiv.innerHTML = `<i class="fab fa-lastfm"></i> Not playing anything`;
+    }
+  } catch (e) {
+    document.getElementById("now-playing").innerHTML = `<i class="fab fa-lastfm"></i> Unable to load now playing`;
+  }
+}
+
+// Update every 30 seconds
+updateNowPlaying();
+setInterval(updateNowPlaying, 30000);
+</script>
 </body>
 </html>
