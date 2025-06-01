@@ -142,7 +142,7 @@
 </head>
 <body>
  <!-- Version text in the top right corner -->
-<div class="version-label">Version 1.06</div>
+<div class="version-label">Version 1.065</div>
   <!-- Main container for content -->
   <div class="container">
     <!-- Profile picture -->
@@ -198,14 +198,14 @@ async function updateNowPlaying() {
     const track = data.recenttracks.track[0];
     const nowPlayingDiv = document.getElementById("now-playing");
     if (track && track["@attr"] && track["@attr"].nowplaying === "true") {
-      nowPlayingDiv.innerHTML = `<i class="fab fa-lastfm"></i> Now Playing: <strong>${track.artist["#text"]} - ${track.name}</strong>`;
+      nowPlayingDiv.innerHTML = `<i class="fab fa-lastfm"></i> Listening To: <strong>${track.artist["#text"]} - ${track.name}</strong>`;
     } else if (track) {
-      nowPlayingDiv.innerHTML = `<i class="fab fa-lastfm"></i> Last Played: <strong>${track.artist["#text"]} - ${track.name}</strong>`;
+      nowPlayingDiv.innerHTML = `<i class="fab fa-lastfm"></i> Last Listened to: <strong>${track.artist["#text"]} - ${track.name}</strong>`;
     } else {
-      nowPlayingDiv.innerHTML = `<i class="fab fa-lastfm"></i> Not playing anything`;
+      nowPlayingDiv.innerHTML = `<i class="fab fa-lastfm"></i> Not listening to anything`;
     }
   } catch (e) {
-    document.getElementById("now-playing").innerHTML = `<i class="fab fa-lastfm"></i> Unable to load now playing`;
+    document.getElementById("now-playing").innerHTML = `<i class="fab fa-lastfm"></i> Unable to load their now playing`;
   }
 }
 
