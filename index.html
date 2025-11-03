@@ -39,8 +39,11 @@
 }
   
   body {
+    /* Use high-resolution image (removed Imgur resize params which caused low quality) */
     background-image: url('https://i.imgur.com/dTK7v2Y.png');
     background-size: cover;
+    background-position: center center;
+    background-color: #000000; /* fallback while image loads */
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: rgb(155, 16, 224);
@@ -145,7 +148,7 @@
 </head>
 <body>
  <!-- Version text in the top right corner -->
-<div class="version-label">Version 1.07 (11/3/25)</div>
+<div class="version-label">Version 1.071 (11/3/25)</div>
   <!-- Main container for content -->
   <div class="container">
     <!-- Profile picture -->
